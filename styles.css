@@ -66,13 +66,7 @@ svg { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: 
 .nav__item--active { color: var(--lime); background: #74b9e81f; }
 .nav__item--active::before { position: absolute; left: -20px; width: 3px; height: 20px; background: var(--lime); border-radius: 0 3px 3px 0; content: ""; }
 .sidebar__footer { margin-top: auto; }
-.mini-profile { display: flex; align-items: center; gap: 10px; padding: 13px 11px; background: #ffffff09; border: 1px solid #ffffff12; border-radius: 13px; }
-.avatar { display: grid; flex: 0 0 34px; place-items: center; height: 34px; color: var(--green-dark); background: #8bbfe2; border-radius: 50%; font-size: 10px; font-weight: 800; }
-.mini-profile > span:last-child { display: grid; min-width: 0; }
-.mini-profile strong { font-size: 11px; }
-.mini-profile small { margin-top: 2px; color: #8199af; font-size: 9px; }
-.sidebar__footer p { margin: 14px 8px 0; color: #6f879d; font-size: 9px; line-height: 1.5; }
-.sidebar__footer p span { display: block; margin-top: 5px; color: #8fa6bc; }
+.sidebar__footer p { margin: 0 8px; color: #8fa6bc; font-size: 9px; line-height: 1.5; }
 
 main { grid-column: 2; width: 100%; max-width: 1500px; margin: 0 auto; padding: 38px 44px 26px; }
 .topbar { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
