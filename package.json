@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "python3 -m http.server 5173 --bind 127.0.0.1"
+    "start": "python3 -m http.server 5173 --bind 127.0.0.1",
+    "export:8a": "node scripts/export-8a.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.63.0"
   }
 }

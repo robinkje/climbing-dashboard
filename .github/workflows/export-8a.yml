@@ -1,0 +1,38 @@
+name: Export 8a.nu data
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: export-8a-data
+  cancel-in-progress: false
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Export ascents
+        run: xvfb-run --auto-servernum npm run export:8a
+        env:
+          EIGHTA_USERNAME: ${{ secrets.EIGHTA_USERNAME }}
+          EIGHTA_PASSWORD: ${{ secrets.EIGHTA_PASSWORD }}
+      - name: Commit changed data
+        run: |
+          git add data.csv
+          git diff --cached --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update 8a.nu data"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
