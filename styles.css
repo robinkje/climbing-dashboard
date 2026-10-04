@@ -72,6 +72,7 @@ svg { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: 
 .mini-profile strong { font-size: 11px; }
 .mini-profile small { margin-top: 2px; color: #8199af; font-size: 9px; }
 .sidebar__footer p { margin: 14px 8px 0; color: #6f879d; font-size: 9px; line-height: 1.5; }
+.sidebar__footer p span { display: block; margin-top: 5px; color: #8fa6bc; }
 
 main { grid-column: 2; width: 100%; max-width: 1500px; margin: 0 auto; padding: 38px 44px 26px; }
 .topbar { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
