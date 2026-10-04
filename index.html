@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b2138" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="description" content="A local outdoor climbing dashboard." />
+    <title>CruxLog — Climbing dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#overview" aria-label="CruxLog home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m4 19 5.2-9.2 2.3 3.6L15.8 5 21 19H4Z"/><path d="m8 19 4-7 4 7"/></svg>
+          </span>
+          <span><strong>CruxLog</strong><small>Climbing journal</small></span>
+        </a>
+
+        <nav class="nav" aria-label="Dashboard navigation">
+          <div class="nav__group">
+            <span class="nav__label">Logbooks</span>
+            <a class="nav__item nav__item--active" href="#overview">
+              <svg viewBox="0 0 24 24"><path d="M4 19.5V6.8A2.8 2.8 0 0 1 6.8 4H20v15.5H6.8A2.8 2.8 0 0 0 4 22.3V19.5Zm0 0A2.5 2.5 0 0 1 6.5 17H20"/></svg>
+              Crag
+            </a>
+          </div>
+          <div class="nav__group nav__group--analytics">
+            <span class="nav__label">Explore</span>
+            <a class="nav__item" href="#performance">
+              <svg viewBox="0 0 24 24"><path d="M4 19V9m6 10V5m6 14v-7m4 7H2"/></svg>
+              Performance
+            </a>
+            <a class="nav__item" href="#logbook">
+              <svg viewBox="0 0 24 24"><path d="M5 5h14v14H5zM8 9h8M8 13h8M8 17h5"/></svg>
+              Logbook
+            </a>
+            <a class="nav__item" href="#places">
+              <svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              Places
+            </a>
+          </div>
+        </nav>
+
+        <div class="sidebar__footer">
+          <div class="mini-profile">
+            <span class="avatar">CL</span>
+            <span><strong>Local logbook</strong><small>data.csv</small></span>
+          </div>
+          <p>Your climbing data stays on this device.</p>
+        </div>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <div>
+            <span class="eyebrow">Outdoor climbing</span>
+            <h1>Crag <em>logbook</em></h1>
+            <p>Ascents, performance, and outdoor climbing history.</p>
+          </div>
+          <div class="topbar__actions" id="filters" aria-label="Logbook filters"></div>
+        </header>
+
+        <div class="source-note" id="source-note" role="status">
+          <span class="source-note__dot"></span>Loading data.csv…
+        </div>
+
+        <div id="dashboard" aria-live="polite"></div>
+        <footer><span>Built from your local climbing export.</span><span id="footer-count"></span></footer>
+      </main>
+    </div>
+
+    <noscript>This dashboard requires JavaScript to read and visualize data.csv.</noscript>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
